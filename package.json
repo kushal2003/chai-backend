@@ -2,7 +2,7 @@
   "name": "chaiaurbackend",
   "version": "1.0.0",
   "description": "a backend at chai aur code channel - yt",
-  "type" : "module",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js"
@@ -15,6 +15,7 @@
   "author": "kushal",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5"
   }
 }
