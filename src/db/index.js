@@ -12,7 +12,6 @@ const connectDB= async ()=> {
         //node hume directly jo process chal rha hai uska accesss de deta hai 
         console.error("MongoDB connection error",error);
         process.exit(1)
-        
     }
 }
 
