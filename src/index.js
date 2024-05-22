@@ -1,40 +1,19 @@
-//while talking to database always use try catch  aur aysnc await (yeh maan ke chalo ki db dusre continent mei hai )
 // require('dotenv').config({path : './env'}) 
-
-//this destroys consistency of the code
-
-
-
 import dotenv from "dotenv"
-import connectDB from "./db/index.js"
-
+import connectDB from "./db/index.js";
+import {app} from './app.js'
 dotenv.config({
-    path: './env'
+    path: './.env'
 })
-connectDB() 
-.then(()=>{
-    app.on("error",(error)=>{
-        console.log("ERR:", error);
-        throw error;
-    })
-    app.listen(process.env.PORT || 6000,()=>{
-        console.log(`The process is running at port  ${process.env.PORT}`);
+connectDB()
+.then(() => {
+    app.listen(process.env.PORT || 8000, () => {
+        console.log(`⚙️ Server is running at port : ${process.env.PORT}`);
     })
 })
-.catch((err)=>{
-    console.log("MONGODB connection failed !",error);
+.catch((err) => {
+    console.log("MONGO db connection failed !!! ", err);
 })
-
-
-
-
-
-
-
-
-import express from "express"
-const app = express()
-
 
 // approach 1 : 
 
@@ -61,12 +40,8 @@ const app = express()
         throw error
     }
 })()
-
 */
-
-
-// Now in the above one our index file got polluted  ,  we need to make it more clear 
- 
+// Now in the above one our index file got polluted  ,  we need to make it more clear  
 // dusri file mei humara saara data ho  and hum usse import krva rhe , yeh better aur clean approach hai 
 
 

@@ -1,8 +1,7 @@
 import express from "express"
-
-import core from "cors"
+import cors from "cors"
 import cookieParser from "cookie-parser"
-const app= express();
+const app= express()
 
 
 app.use(cors({
@@ -14,7 +13,6 @@ app.use(cors({
 
 app.use(express.json({limit : "16kb"}))
 app.use(express.urlencoded({extended: true, limit : "16kb"}))
-
 app.use(express.static("public"))
 app.use(cookieParser)
 
@@ -27,4 +25,4 @@ app.use("/api/v1/users",userRouter) // this is a middleware
 // ab router ko laane ke liye middleware chahiye ,  pehle toh app.get use krr rhe the toh ussi mei routes aur controllers wali problem sort kr rhe hai 
 // jo url bnega woh is type ka hoga : api/v1/users/register
 
-export {app}
+export { app }
